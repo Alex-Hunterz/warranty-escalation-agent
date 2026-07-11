@@ -73,6 +73,17 @@ echo "GEMINI_API_KEY=<your-key>" > .env
 echo ".env" >> .gitignore
 ```
 
+### Run the Web App (the demo)
+```bash
+python3 -m uvicorn app.server:app --port 8787
+# open http://localhost:8787
+# 1. Connect Gmail (OAuth, read-only — uses app/credentials.json)
+# 2. Voice or text: "pull all my emails with Nothing and Flipkart for my Nothing Phone — there were issues"
+# 3. Watch 7 agents live: intake → gmail → extract → advocate vs defense → arbiter →
+#    filing → REAL Gemini Computer Use (gemini-2.5-computer-use-preview) driving a live
+#    browser on consumerhelpline.gov.in → monitoring. Stops before submit (human approves).
+```
+
 ### Run Full Pipeline (60 seconds)
 ```bash
 # Run all 6 agents orchestrated
