@@ -41,9 +41,11 @@ RETURN FORMAT (JSON):
   "days_elapsed": 21,
   "alerts": [
     {
+      "type": "SLA_BREACH / ESCALATION_TRIGGER / COMPLIANCE_CHECK / APPEAL_DEADLINE",
       "severity": "HIGH / MEDIUM / LOW",
       "alert": "Company breached its own 7-day SLA (now day 21)",
-      "action_needed": "None (auto-tracked), but this strengthens case for deficiency-of-service"
+      "trigger_condition": "What condition triggered this alert? (e.g., 'days > promised_days')",
+      "action_needed": "What should user do? (None / Contact company / Escalate to e-Jagriti / File execution)"
     },
     ...
   ],
@@ -53,10 +55,11 @@ RETURN FORMAT (JSON):
     "escalation_to_ejagriti": null or "Text for escalating from NCH to e-Jagriti filing"
   },
   "next_check_date": "YYYY-MM-DD",
+  "next_check_trigger": "What should happen at next_check_date? (e.g., 'Check if NCH response received')",
   "user_notifications": [
     "Message to send to user (SMS/email style)"
   ],
-  "case_status_summary": "Human-readable status (e.g., 'Day 21: Company missed SLA, case strong for e-Jagriti filing')"
+  "case_status_summary": "Human-readable status (e.g., 'Day 21: Company missed SLA, escalate to e-Jagriti')"
 }
 
 EXECUTION PETITION TEMPLATE (if needed):

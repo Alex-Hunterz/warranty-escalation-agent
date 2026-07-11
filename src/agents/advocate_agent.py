@@ -27,10 +27,14 @@ YOUR TASK:
 
 3. Flag evidence gaps that would STRENGTHEN the case if filled.
 
-4. Calculate requested relief:
+4. Calculate requested relief (document reasoning):
    - Refund: Full product price (if defective within warranty)
-   - Compensation for deficiency-of-service: Typically ₹5k-10k depending on harassment duration
-   - Pre-litigation costs: ₹500-1000
+   - Compensation for deficiency-of-service: ₹5k-10k based on:
+     * Duration of unresolved complaint (>14 days = +₹2k per week)
+     * Number of follow-ups needed (each follow-up = +₹1k)
+     * Documented inconvenience (lost use of product = relevant factor)
+   - Pre-litigation costs: ₹500-1000 (filing, documentation, time)
+   - Document EACH line item's justification in complaint_draft
 
 RETURN FORMAT (JSON):
 {

@@ -44,7 +44,8 @@ RETURN FORMAT (JSON):
   "company_counterargument": "Full 200-300 word counter-complaint as company would write it",
   "strongest_defense": "Which ONE defense is most likely to win?",
   "weakest_point_in_advocate_case": "Where is Advocate most vulnerable?",
-  "case_strength_estimate_for_company": 4  // 0-10, 10 being company wins
+  "case_strength_estimate_for_company": 4,  // 0-10, DETERMINISTIC (not range). 10 = company wins
+  "reasoning_for_score": "Why this score? What facts drive it?"
 }
 
 EXAMPLES OF REALISTIC DEFENSES:
