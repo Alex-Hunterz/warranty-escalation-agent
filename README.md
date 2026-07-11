@@ -1,8 +1,9 @@
-# Consumer Warranty Escalation Agent
+# Warranty Escalation Agent
+## Google DeepMind Hackathon - Problem Statement 2
 
-**Google DeepMind Bangalore Hackathon** — Problem Statement 2: Autonomous Orchestration with Managed Agents
+🚀 **Multi-Agent System with Antigravity Deployment**
 
-Autonomous multi-agent system that escalates warranty claims through India's legal system.
+Autonomous system that analyzes warranty claims via 6 agents (adversarial reasoning), routes through India's consumer protection channels, and auto-escalates using SLA tracking.
 
 ---
 
@@ -24,12 +25,14 @@ A 6-agent system that:
 
 ## Key Differentiators
 
-| vs. Voxya | Our System |
-|-----------|-----------|
-| Fixed 4-step sequence | Adaptive routing (NCH-first vs Public-first vs Legal-direct) |
-| Human-written notices | Autonomous form-filling on real gov portals |
-| Single-path reasoning | **Adversarial debate** (Advocate vs Defense, quality gate) |
-| Manual follow-up | Unattended monitoring (tracks SLA, auto-drafts escalation) |
+| Feature | Voxya | Our System |
+|---------|-------|-----------|
+| Architecture | 2 employees | 6 autonomous agents |
+| Reasoning | Single-path | **Adversarial** (Advocate vs Defense) |
+| Routing | Fixed sequence | Adaptive (NCH / Legal / Court) |
+| Deployment | Monolithic | **Antigravity Managed Agents** |
+| Forms | Manual | **Computer Use (real browser)** |
+| Monitoring | Manual | Autonomous 24/7 + auto-escalate |
 
 ---
 
@@ -70,13 +73,19 @@ echo "GEMINI_API_KEY=<your-key>" > .env
 echo ".env" >> .gitignore
 ```
 
-### Run Demo
+### Run Full Pipeline (60 seconds)
 ```bash
-python3 demo.py --mode quick      # 1-minute summary
-python3 demo.py --mode full       # 3-minute full walkthrough
+# Run all 6 agents orchestrated
+python3 orchestrate_real.py
 
-# Or run Phase 1 tests
-python3 tests/test_phase1.py
+# Show 1-minute video script
+python3 video_demo_1min.py
+
+# Interactive case input
+python3 input_your_case.py
+
+# Original demo
+python3 demo.py
 ```
 
 ---
@@ -85,25 +94,48 @@ python3 tests/test_phase1.py
 
 ```
 src/
-  core.py                    # LLM + JSON utilities
-  orchestrator.py            # Ties all 6 agents together
-  antigravity_config.json    # Antigravity agent wiring
-  agents/
-    extraction_agent.py      # Parse case evidence
-    advocate_agent.py        # Build legal case
-    defense_agent.py         # Counter-arguments (adversarial)
-    arbiter_agent.py         # Score & route
-    filing_agent.py          # Stage gov forms
-    monitoring_agent.py      # Track SLA + auto-escalate
+  core.py                       # LLM utilities (Gemini)
+  antigravity_agents.py         # **NEW**: 6 agents ready to deploy
+  computer_use_integration.py   # **NEW**: Real browser form filling
+  
+DEPLOYMENT_TO_ANTIGRAVITY.md   # **NEW**: Step-by-step deployment guide
+ANTIGRAVITY_ARCHITECTURE.md    # System architecture + Problem Statement 2 alignment
+orchestrate_real.py             # **NEW**: Full pipeline demo
+video_demo_1min.py              # **NEW**: 1-min hackathon video script
 
-tests/
-  test_phase1.py             # Priya's chair case verification
-
-demo.py                       # Live demo script
-README.md                     # This file
-PHASE1_SUMMARY.md             # Phase 1 test results
-PHASE2_PLAN.md                # Antigravity integration plan
+demo.py                         # Original demo (local agents)
+parse_nothing_phone_case.py    # Case analyzer (Nothing Phone example)
 ```
+
+---
+
+## 🚀 For Hackathon Judges
+
+### This Meets Problem Statement 2
+
+✅ **Multi-agent system** - 6 agents (not single monolith)  
+✅ **Planning** - Arbiter agent makes intelligent routing decisions  
+✅ **Delegation** - Agents call each other (adversarial reframe)  
+✅ **Execution** - Each agent executes its role with state handoff  
+✅ **Managed Agents** - Designed for Antigravity deployment  
+✅ **Real workflow** - Extract → Analyze → Route → File → Monitor  
+
+### Quick Eval (2 minutes)
+
+```bash
+python3 orchestrate_real.py
+```
+
+**Output**: All 6 agents executing, case scores, routing decision, JSON result
+
+### Full Deployment (15 minutes)
+
+See: `DEPLOYMENT_TO_ANTIGRAVITY.md`
+
+1. Go to [ai.google.dev/aistudio](https://ai.google.dev/aistudio)
+2. Create project
+3. Follow deployment steps 1-6
+4. Same code, now running on Antigravity
 
 ---
 
