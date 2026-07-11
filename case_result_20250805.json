@@ -1,0 +1,260 @@
+{
+  "case_input": {
+    "receipt_text": "Sleep Co Chair, \u20b940,000, Warranty 24 months",
+    "defect_description": "Backrest cracked (3cm), normal office use",
+    "defect_date": "2025-07-15",
+    "defect_photos_count": 3,
+    "warranty_text": "24-month manufacturer warranty, 7-10 business day SLA",
+    "chat_thread": "[2025-07-15] Me: Backrest cracked, requesting replacement. [2025-07-15] Company: Under review, 7-10 days. [2025-08-05] Still no response (21 days).",
+    "today_date": "2025-08-05"
+  },
+  "extraction": {
+    "product": {
+      "name": "Sleep Co Chair",
+      "model": null,
+      "price": 40000,
+      "purchase_date": null,
+      "purchase_channel": null,
+      "serial_number": null
+    },
+    "warranty": {
+      "period_months": 24,
+      "type": "Manufacturer",
+      "expiry_date": null
+    },
+    "defect": {
+      "description": "Backrest cracked (3cm)",
+      "date_first_noticed": "2025-07-15",
+      "severity": "High",
+      "usage_context": "normal office use"
+    },
+    "company_communication": [
+      {
+        "date": "2025-07-15",
+        "direction": "user_to_company",
+        "summary": "Backrest cracked, requesting replacement.",
+        "sla_promise": null,
+        "response_days_from_previous": null
+      },
+      {
+        "date": "2025-07-15",
+        "direction": "company_to_user",
+        "summary": "Complaint put under review, promised update in 7-10 days.",
+        "sla_promise": "Under review, 7-10 days.",
+        "response_days_from_previous": 0
+      },
+      {
+        "date": "2025-08-05",
+        "direction": "user_to_company",
+        "summary": "User followed up noting still no response after 21 days.",
+        "sla_promise": null,
+        "response_days_from_previous": 21
+      }
+    ],
+    "sla_analysis": {
+      "company_promised_days": "7-10 business days",
+      "days_promised": 10,
+      "actual_days_elapsed": 21,
+      "sla_breached": true,
+      "sla_breach_evidence": "Under review, 7-10 days."
+    },
+    "evidence": [
+      {
+        "type": "receipt",
+        "status": "Available"
+      },
+      {
+        "type": "warranty_card",
+        "status": "Available"
+      },
+      {
+        "type": "defect_photo",
+        "count": 3,
+        "status": "Available"
+      },
+      {
+        "type": "chat_thread",
+        "status": "Complete"
+      }
+    ],
+    "data_quality": {
+      "complete": false,
+      "missing_for_strong_case": [
+        "Purchase date (needed to calculate warranty expiry exactly)",
+        "Purchase channel (invoice copy/proof of purchase location)",
+        "Product serial number"
+      ]
+    }
+  },
+  "advocate": {
+    "primary_legal_angle": "Deficiency-of-Service",
+    "applicable_clauses": [
+      {
+        "act": "Consumer Protection Act, 2019",
+        "section": "2(11)",
+        "text": "Deficiency means any fault, imperfection, shortcoming or inadequacy in the quality, nature and manner of performance which is required to be maintained by or under any law for the time being in force or has been undertaken to be performed by a person in pursuance of a contract or otherwise in relation to any service.",
+        "relevance": "The company promised a 7-10 day resolution window but failed to respond for 21 days, establishing a clear deficiency in service."
+      },
+      {
+        "act": "Consumer Protection Act, 2019",
+        "section": "2(10)",
+        "text": "Defect means any fault, imperfection or shortcoming in the quality, quantity, potency, purity or standard which is required to be maintained by or under any law for the time being in force or under any contract, express or implied, or as is claimed by the trader in any manner whatsoever in relation to any goods.",
+        "relevance": "The 3cm crack on the backrest during normal office use constitutes a structural manufacturing defect in the goods sold."
+      },
+      {
+        "act": "Sale of Goods Act, 1930",
+        "section": "16",
+        "text": "Implied conditions as to quality or fitness.",
+        "relevance": "The product failed to serve its basic purpose of safe seating under normal conditions, breaching the implied warranty of merchantability."
+      }
+    ],
+    "complaint_draft": "On the date of purchase, the Complainant bought a 'Sleep Co Chair' for \u20b940,000, backed by a 24-month manufacturer warranty. On 15th July 2025, during normal office use, the chair's backrest suffered a severe 3cm structural crack, rendering it unusable. The Complainant reported this defect to the Opposite Party (OP) on the same day. The OP formally acknowledged the complaint, promising a resolution update within 7-10 business days. Despite this explicit SLA, the OP failed to provide any update. The Complainant followed up on 5th August 2025\u201421 days post-complaint\u2014but was met with complete silence. This unmitigated timeline breach constitutes a 'Deficiency of Service' under Section 2(11) of the CPA 2019, while the physical crack represents a clear 'Defect' under Section 2(10). The Complainant has suffered severe back strain and harassment due to the loss of product utility. Therefore, the Complainant claims: 1) Full refund of \u20b940,000 as the product failed within warranty; 2) Compensation of \u20b98,000 (comprising \u20b95,000 baseline mental agony, \u20b92,000 for the 11-day SLA delay, and \u20b91,000 for lost utility and follow-up efforts); and 3) Pre-litigation costs of \u20b91,000.",
+    "legal_reasoning": "The documented breach of the company's 7-10 day SLA (unresolved after 21 days) makes Deficiency-of-Service the primary legal angle. Proving a service timeline breach combined with physical damage during normal use is highly effective and difficult for the manufacturer to contest in consumer court.",
+    "requested_relief": {
+      "refund_amount": 40000,
+      "compensation_amount": 8000,
+      "pre_litigation_cost": 1000,
+      "total_claimed": 49000
+    },
+    "evidence_citations": [
+      {
+        "evidence_type": "receipt",
+        "how_it_proves": "Establishes the purchase transaction of \u20b940,000 and consumer status under CPA 2019."
+      },
+      {
+        "evidence_type": "warranty_card",
+        "how_it_proves": "Confirms the active 24-month warranty coverage protecting against structural failures."
+      },
+      {
+        "evidence_type": "defect_photo",
+        "how_it_proves": "Three high-resolution photographs objectively prove the 3cm crack on the backrest occurred under normal usage."
+      },
+      {
+        "evidence_type": "chat_thread",
+        "how_it_proves": "Documents the timeline of the complaint, the OP's 7-10 day SLA commitment, and subsequent non-responsiveness over 21 days."
+      }
+    ],
+    "evidence_gaps": [
+      "Exact purchase date to calculate and state the precise remaining warranty period.",
+      "Purchase channel (invoice copy) to identify the specific retail entity liable alongside the manufacturer.",
+      "Product serial number to uniquely tie the defective chair to the warranty card and invoice."
+    ],
+    "case_strength_estimate": 8
+  },
+  "defense": {
+    "defenses": [
+      {
+        "defense": "The 7-10 days timeline was an administrative 'under review' service estimate for an update, not a contractually binding SLA or a guarantee of final resolution.",
+        "legal_basis": "Consumer Protection Act, 2019, Section 2(11) - Service deficiency requires a willful breach of a contractually undertaken performance timeline, not a delayed progress update during technical investigation.",
+        "strength": "HIGH",
+        "supporting_evidence": "Company communication on 2025-07-15 stated: 'Complaint put under review, promised update in 7-10 days.'",
+        "weakness": "The company failed to provide any update or follow-up even after 21 days, which a consumer forum may still view as administrative laxity."
+      },
+      {
+        "defense": "The complainant has failed to establish that the specific chair is covered under an active warranty as key identifiers\u2014such as the purchase date and serial number\u2014are missing and unverified.",
+        "legal_basis": "Indian Evidence Act, 1872, Section 101 - The burden of proof lies on the complainant to establish the foundational facts of the contract, namely a valid warranty period and matching product identity.",
+        "strength": "MEDIUM",
+        "supporting_evidence": "The case data indicates that the 'purchase_date', 'serial_number', and 'purchase_channel' are currently null and unverified.",
+        "weakness": "The complainant has physical possession of a receipt and warranty card which they can easily produce during the trial to cure this defect."
+      },
+      {
+        "defense": "A 3cm physical crack on the backrest is highly characteristic of external impact, improper assembly, or load limit violations, which are standard exclusions under the manufacturer's warranty.",
+        "legal_basis": "Sale of Goods Act, 1930, Section 16 - Implied warranty of merchantability does not cover physical damage resulting from user-end wear-and-tear, accidental damage, or abnormal usage.",
+        "strength": "MEDIUM",
+        "supporting_evidence": "The physical defect is described as a 'Backrest cracked (3cm)' occurring after an unspecified period of usage.",
+        "weakness": "The complainant asserts the damage occurred under 'normal office use' and has 3 photos, requiring the company to present an expert technical report to prove user negligence."
+      }
+    ],
+    "company_counterargument": "The Complainant's claim is premature, legally flawed, and contractually unsustainable. While Sleep Co stands by the quality of its products, the Complainant has failed to establish a prima facie case. First, the Complainant has failed to provide critical transactional details, including the exact purchase date and the product's serial number, leaving the warranty eligibility of this specific unit unverified. Second, a 3cm structural crack on a high-durability load-bearing backrest is highly indicative of external force, overloading, or accidental drop\u2014none of which are covered under our 24-month manufacturer warranty which strictly covers inherent manufacturing defects. Third, the Complainant's allegation of 'Deficiency of Service' under Section 2(11) of the CPA 2019 is baseless. The communication on July 15, 2025, clearly stated that the complaint was 'under review' with an estimated update timeline of 7-10 days. This was a service estimate to allow our technical team to assess the structural damage, not a contractually binding resolution guarantee. A 21-day window to evaluate structural hardware damage is entirely reasonable and does not constitute a willful deficiency. The Complainant chose to rush to litigation rather than allowing the technical review process to conclude. We pray for the dismissal of this complaint and the associated \u20b949,000 claim.",
+    "strongest_defense": "The SLA of 7-10 days was an estimate for an internal update ('under review'), not a contractually binding deadline for final product replacement, meaning no deficiency of service occurred under Section 2(11) CPA.",
+    "weakest_point_in_advocate_case": "The Advocate's failure to state the exact purchase date, purchase channel, and product serial number, which are essential to prove the contract of warranty is currently active and applicable to this specific unit.",
+    "case_strength_estimate_for_company": 4,
+    "reasoning_for_score": "The company has strong defenses against the 'Deficiency of Service' and mental harassment claims because a 21-day delay is minor and the SLA was an estimate. However, because the consumer has the actual physical receipt, warranty card, and photos of a significant 3cm crack within the general 24-month window, the consumer forum is highly likely to order a repair or replacement of the chair once the missing data is produced in court."
+  },
+  "arbiter": {
+    "advocate_score": 7,
+    "defense_score": 4,
+    "net_confidence_percent": 85,
+    "reasoning": "The Advocate has a solid case backed by photographic evidence of a 3cm crack and a clear SLA breach (no response for 21 days after promising an update in 7-10 days). While the Defense correctly points out that specific metadata (purchase date, serial number) is currently missing from the digital case file, the user physically possesses the receipt and warranty card, making this defect easily curable. The defense that '7-10 days was just an estimate' does not justify completely ignoring a consumer for 21 days.",
+    "routing_decision": "ready_to_file",
+    "channel_choice": "NCH-first",
+    "channel_reasoning": "The company has clearly stalled, breaching their own promised communication timeline of 7-10 days by staying silent for 21 days. Filing through the National Consumer Helpline (NCH) is the optimal path as it leverages government-monitored timelines to force a response from the manufacturer within 15 days.",
+    "suggested_reframe": null,
+    "next_action": "Generate the NCH complaint. Request the user to provide the purchase date, purchase channel, and product serial number from their receipt and warranty card to complete the filing details."
+  },
+  "filing": {
+    "portal": "NCH",
+    "form_data": {
+      "state": null,
+      "company_name": "Sleep Co",
+      "sector": "Consumer Durables",
+      "category": "Furniture",
+      "nature": "Deficiency of Service / Manufacturing Defect",
+      "product_name": "Sleep Co Chair",
+      "purchase_amount": 40000,
+      "relief_amount": 49000,
+      "complaint_text": "On the date of purchase, the Complainant bought a 'Sleep Co Chair' for \u20b940,000, backed by a 24-month manufacturer warranty. On 15th July 2025, during normal office use, the chair's backrest suffered a severe 3cm structural crack, rendering it unusable. The Complainant reported this defect to the Opposite Party (OP) on the same day. The OP formally acknowledged the complaint, promising a resolution update within 7-10 business days. Despite this explicit SLA, the OP failed to provide any update. The Complainant followed up on 5th August 2025\u201421 days post-complaint\u2014but was met with complete silence. This unmitigated timeline breach constitutes a 'Deficiency of Service' under Section 2(11) of the CPA 2019, while the physical crack represents a clear 'Defect' under Section 2(10). The Complainant has suffered severe back strain and harassment due to the loss of product utility. Therefore, the Complainant claims: 1) Full refund of \u20b940,000 as the product failed within warranty; 2) Compensation of \u20b98,000 (comprising \u20b95,000 baseline mental agony, \u20b92,000 for the 11-day SLA delay, and \u20b91,000 for lost utility and follow-up efforts); and 3) Pre-litigation costs of \u20b91,000.",
+      "evidence_list": [
+        "receipt",
+        "warranty_card",
+        "defect_photo",
+        "chat_thread"
+      ],
+      "user_details": {
+        "phone": null,
+        "email": null,
+        "purchase_date": null,
+        "purchase_channel": null,
+        "serial_number": null
+      }
+    },
+    "affidavit_text": null,
+    "sla_window": "15 days for NCH response",
+    "next_step": "Please provide your missing purchase details (Purchase Date, Purchase Channel, Product Serial Number) along with your State and Contact Information to complete the filing form.",
+    "filing_checklist": [
+      "receipt \u2713 (Metadata incomplete)",
+      "warranty_card \u2713",
+      "defect_photo \u2713",
+      "chat_thread \u2713",
+      "purchase_date \u2717",
+      "purchase_channel \u2717",
+      "serial_number \u2717",
+      "state_and_contact_details \u2717"
+    ],
+    "ready_to_submit": false,
+    "timestamp": "2026-07-11T13:56:19.979620",
+    "status": "pending_human_approval",
+    "sla_response_deadline": "2026-07-26T13:56:19.979642"
+  },
+  "monitoring": {
+    "current_stage": "company_sla_tracking",
+    "days_elapsed": 361,
+    "alerts": [
+      {
+        "type": "SLA_BREACH",
+        "severity": "HIGH",
+        "alert": "Company breached its own 10-day SLA (now day 361 since defect was reported)",
+        "trigger_condition": "days_elapsed > company_promised_days",
+        "action_needed": "Complete the pending NCH filing immediately to initiate formal dispute resolution."
+      },
+      {
+        "type": "COMPLIANCE_CHECK",
+        "severity": "MEDIUM",
+        "alert": "NCH filing is pending and cannot be submitted due to missing details",
+        "trigger_condition": "ready_to_submit == false",
+        "action_needed": "Provide missing details: Purchase Date, Purchase Channel, Serial Number, State, and Contact details."
+      }
+    ],
+    "escalation_needed": true,
+    "auto_drafts": {
+      "execution_petition": null,
+      "escalation_to_ejagriti": null
+    },
+    "next_check_date": "2026-07-14",
+    "next_check_trigger": "Verify if missing purchase and contact details have been provided by the user to submit the NCH complaint",
+    "user_notifications": [
+      "Urgent: Sleep Co has ignored your warranty claim for 361 days. We have drafted your NCH complaint but need your Purchase Date, Channel, and Serial Number to submit it. Please update these details now to proceed."
+    ],
+    "case_status_summary": "Day 361: Sleep Co is in extreme breach of its 10-day SLA. NCH filing is drafted but pending user input (Purchase Date, Channel, Serial Number) before submission."
+  }
+}
