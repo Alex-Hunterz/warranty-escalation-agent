@@ -1,0 +1,138 @@
+{
+  "project_id": "warranty-escalation-agent",
+  "agents": [
+    {
+      "id": "agent_extraction",
+      "name": "Extraction Agent",
+      "model": "gemini-3.5-flash",
+      "system_prompt_file": "src/agents/extraction_agent.py",
+      "tools": [],
+      "description": "Parse case files into structured CaseObject"
+    },
+    {
+      "id": "agent_advocate",
+      "name": "Consumer Advocate",
+      "model": "gemini-3.5-flash",
+      "system_prompt_file": "src/agents/advocate_agent.py",
+      "tools": [],
+      "description": "Build strongest legal case"
+    },
+    {
+      "id": "agent_defense",
+      "name": "Company Defense",
+      "model": "gemini-3.5-flash",
+      "system_prompt_file": "src/agents/defense_agent.py",
+      "tools": [],
+      "description": "Realistic counter-arguments (adversarial)"
+    },
+    {
+      "id": "agent_arbiter",
+      "name": "Arbiter/Orchestrator",
+      "model": "gemini-3.5-flash",
+      "system_prompt_file": "src/agents/arbiter_agent.py",
+      "tools": [
+        {
+          "type": "LLM_CALL",
+          "name": "reframe_advocate",
+          "description": "Re-call Advocate with new legal angle"
+        },
+        {
+          "type": "LLM_CALL",
+          "name": "reframe_defense",
+          "description": "Re-call Defense with updated case"
+        }
+      ],
+      "description": "Score both sides, route to: insufficient_evidence / reframe / ready_to_file"
+    },
+    {
+      "id": "agent_filing",
+      "name": "Filing Agent",
+      "model": "gemini-3.5-flash",
+      "system_prompt_file": "src/agents/filing_agent.py",
+      "tools": [
+        {
+          "type": "BROWSER_TOOL",
+          "name": "browse_nch",
+          "description": "Open consumerhelpline.gov.in and fill form"
+        },
+        {
+          "type": "BROWSER_TOOL",
+          "name": "browse_ejagriti",
+          "description": "Open e-daakhil.gov.in and fill form"
+        }
+      ],
+      "description": "Stage government forms (stops before submit for human approval)"
+    },
+    {
+      "id": "agent_monitoring",
+      "name": "Monitoring Agent",
+      "model": "gemini-3.5-flash",
+      "system_prompt_file": "src/agents/monitoring_agent.py",
+      "tools": [
+        {
+          "type": "TIMER_TRIGGER",
+          "name": "schedule_checks",
+          "description": "Schedule monitoring at: day 1, 11, 20, 30"
+        },
+        {
+          "type": "NOTIFY",
+          "name": "alert_user",
+          "description": "Send SMS/email alerts to user"
+        }
+      ],
+      "description": "Autonomous tracking: SLA breach detection, auto-escalation, execution petition drafting"
+    }
+  ],
+  "orchestration_flow": {
+    "stage_1_extraction": {
+      "agent": "agent_extraction",
+      "input": "raw_case_files",
+      "output": "case_obj"
+    },
+    "stage_2_parallel_debate": {
+      "agents": ["agent_advocate", "agent_defense"],
+      "inputs": ["case_obj", "case_obj"],
+      "outputs": ["advocate_draft", "defense_draft"]
+    },
+    "stage_3_routing": {
+      "agent": "agent_arbiter",
+      "inputs": ["case_obj", "advocate_draft", "defense_draft"],
+      "decision_branches": {
+        "insufficient_evidence": {
+          "action": "loop_back_to_extraction",
+          "message": "we_need_more_evidence"
+        },
+        "reframe": {
+          "action": "call_advocate_again",
+          "message": "try_different_legal_angle",
+          "loops_to": "stage_2_parallel_debate"
+        },
+        "ready_to_file": {
+          "action": "proceed_to_filing",
+          "loops_to": "stage_4_filing"
+        }
+      }
+    },
+    "stage_4_filing": {
+      "agent": "agent_filing",
+      "inputs": ["case_obj", "advocate_draft", "arbiter_decision"],
+      "output": "filing_data",
+      "human_gate": "submit_button"
+    },
+    "stage_5_monitoring_scheduled": {
+      "agent": "agent_monitoring",
+      "inputs": ["case_obj", "filing_data"],
+      "schedule": ["day_1", "day_11", "day_20", "day_30"],
+      "output": "monitoring_alerts_and_drafts"
+    }
+  },
+  "state_storage": {
+    "type": "in_memory_dict",
+    "keys": ["case_obj", "advocate_draft", "defense_draft", "filing_data", "monitoring_updates"],
+    "persistence": "session_only"
+  },
+  "rate_limits": {
+    "api_calls_per_minute": 100,
+    "total_daily_calls": 500
+  }
+}
