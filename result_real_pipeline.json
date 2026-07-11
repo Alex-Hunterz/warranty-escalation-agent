@@ -1,0 +1,388 @@
+{
+  "status": "pipeline_complete",
+  "decision": "ready_to_file",
+  "confidence": 95,
+  "routing_channel": "legal_notice_direct",
+  "agents_output": {
+    "status": "completed",
+    "decision": "ready_to_file",
+    "confidence": 95,
+    "routing_channel": "legal_notice_direct",
+    "case": {
+      "product": {
+        "name": "Nothing Phone 4a Pro",
+        "model": "4a Pro",
+        "serial": "",
+        "price": 0.0,
+        "purchase_date": "2026-03-23"
+      },
+      "defect": {
+        "description": "Water patches in Glyph Matrix display",
+        "date_discovered": "2026-03-25",
+        "severity": "high"
+      },
+      "timeline": [
+        {
+          "date": "2026-03-23",
+          "event": "Product purchased"
+        },
+        {
+          "date": "2026-03-25",
+          "event": "Defect discovered (Water patches in Glyph Matrix display)"
+        }
+      ],
+      "company": {
+        "name": "Nothing India",
+        "contact": "support@nothing.tech",
+        "promises": [
+          "7-10 days resolution"
+        ]
+      },
+      "evidence": [
+        {
+          "type": "receipt",
+          "description": "Invoice (March 23, 2026)"
+        },
+        {
+          "type": "photo",
+          "description": "Defect photos (2)"
+        },
+        {
+          "type": "email",
+          "description": "Email thread with support"
+        },
+        {
+          "type": "ticket",
+          "description": "Support ticket screenshots (Ticket #1700763)"
+        }
+      ],
+      "current_status": "Unresolved, SLA breached",
+      "days_elapsed": 16,
+      "sla_breaches": [
+        {
+          "promised": "7-10 days",
+          "actual": "16 days",
+          "days_overdue": 6
+        }
+      ],
+      "extraction_model": "gemini-3.5-flash",
+      "agent": "extraction_agent"
+    },
+    "advocate_view": {
+      "legal_claims": [
+        {
+          "section": "Section 2(10) of the Consumer Protection Act, 2019",
+          "claim": "Manufacturing Defect in Mobile Device",
+          "evidence": "Water patches appeared in the sealed Glyph Matrix display within 48 hours of purchase (discovered on 2026-03-25 after purchase on 2026-03-23), indicating a fundamental sealing/ingress protection failure during manufacturing."
+        },
+        {
+          "section": "Section 2(11) of the Consumer Protection Act, 2019",
+          "claim": "Deficiency in Service due to SLA Breach",
+          "evidence": "Support ticket #1700763 remains unresolved after 16 days, violating Nothing India's contractually promised resolution SLA of 7-10 days by an overdue margin of 6 days."
+        },
+        {
+          "section": "Section 2(47) of the Consumer Protection Act, 2019",
+          "claim": "Unfair Trade Practice",
+          "evidence": "Selling a product with a defective ingress protection barrier that fails immediately under normal usage, combined with misleading service delivery timelines (SLA breach)."
+        },
+        {
+          "section": "Section 84 of the Consumer Protection Act, 2019",
+          "claim": "Product Liability Action against Product Manufacturer",
+          "evidence": "The product contains a design and manufacturing defect (Glyph Matrix moisture accumulation) that deviates from standard specifications of usage, rendering the device unfit for purpose."
+        }
+      ],
+      "strength_score": 9.2,
+      "estimated_compensation": 65000.0,
+      "deficiency_type": "manufacturing",
+      "supporting_arguments": [
+        "The defect manifested within 48 hours of purchase, establishing a strong legal presumption that the latent defect existed at the time of sale.",
+        "A sealed Glyph Matrix displaying water patches without any external physical damage or immersion proof indicates a gross defect in the manufacturing assembly's quality control.",
+        "The manufacturer's failure to resolve the issue within their committed 7-10 days SLA constitutes a clear deficiency in service, causing mental harassment and loss of utility to the consumer.",
+        "The consumer possesses comprehensive evidence including the purchase invoice, photographic proof of the defect, and documented communication logs showcasing the SLA breach."
+      ],
+      "weaknesses": [
+        "The manufacturer might raise a counter-defense alleging user-induced water damage/misuse, which must be proactively refuted by pointing out the immediate 2-day timeline and the absence of any external physical impact on the device chassis."
+      ],
+      "recommendation": "strong_case",
+      "agent": "advocate_agent"
+    },
+    "defense_view": {
+      "company_position": "The warranty claim is ineligible for free replacement or repair because the reported defect involves liquid ingress ('water patches'), which is explicitly excluded from standard warranty coverage under Nothing's Limited Warranty Policy. Standard IP (Ingress Protection) ratings are tested under controlled laboratory conditions and do not constitute an absolute guarantee against liquid damage, nor does the warranty cover liquid exposure resulting from accidental drops, environmental pressure, or exposure to liquids beyond rating limits. Furthermore, a 16-day turnaround time during active technical investigation does not constitute a 'deficiency of service' under Indian Consumer Law.",
+      "counter_claims": [
+        {
+          "claim": "Liquid damage is a standard industry exclusion and voids the limited warranty, shifting the burden of repair costs to the consumer as Customer-Induced Damage (CID).",
+          "legal_basis": "Nothing Limited Warranty Policy (Exclusions Section); Section 19 of the Indian Sale of Goods Act, 1930 (risk passes to the buyer upon delivery)."
+        },
+        {
+          "claim": "A 16-day resolution window during an ongoing technical verification and diagnostic process for liquid ingress does not amount to 'Deficiency in Service' under the Consumer Protection Act.",
+          "legal_basis": "Section 2(11) of the Consumer Protection Act, 2019 (requiring proof of negligence or willful default, rather than standard operational diagnostic delays)."
+        }
+      ],
+      "strength_score": 7,
+      "warranty_limitations": [
+        "Warranty strictly excludes damage caused by liquid, moisture, dampness, or spillages of food or liquid.",
+        "IP rating protection is not permanent and can degrade over time or be compromised by minor physical shocks not visible externally.",
+        "Warranty does not cover cosmetic or internal damage caused by accidental exposure to steam, high humidity, or pressurized water."
+      ],
+      "evidence_gaps": [
+        "No authorized service center diagnostic report proving that the internal Liquid Contact Indicators (LCIs) are untripped.",
+        "No expert opinion or technical teardown analysis confirming that the seal failed due to a manufacturing defect rather than user-induced exposure to liquid exceeding the device's IP rating limits.",
+        "Lack of proof that the device did not suffer a minor drop or pressure strain between March 23 and March 25 that compromised the waterproof adhesive seals."
+      ],
+      "likely_defense": "The company will demand the physical submission of the device to an authorized service center for a technical teardown. If the internal Liquid Contact Indicators (LCIs) are found to be pink/red (tripped), the company will formally deny the warranty claim, cite the 'Liquid Ingress' exclusion clause, and issue an estimate for paid out-of-warranty repairs. The company will argue that the 16-day delay was necessary to conduct a thorough technical analysis and verify the root cause of the seal breach.",
+      "company_advantage": "Industry-standard warranty terms and conditions universally exclude liquid damage, and Indian Consumer Fora routinely uphold these exclusions when internal Liquid Contact Indicators (LCIs) are tripped, as it serves as physical, objective evidence of liquid exposure post-purchase.",
+      "agent": "defense_agent"
+    },
+    "arbiter_view": {
+      "advocate_score": 8.5,
+      "defense_score": 4.5,
+      "net_confidence": 95,
+      "routing_decision": "ready_to_file",
+      "channel": "legal_notice_direct",
+      "reasoning": "The advocate holds a highly compelling case because the defect manifested within 48 hours of purchase, which strongly indicates a pre-existing manufacturing defect in the ingress protection/sealing of the Glyph Matrix. While the defense argues standard liquid exclusions, a device failing within 2 days of normal use cannot be dismissed as user negligence without immediate diagnostic proof, which the company has failed to provide. Furthermore, the company has breached its own 7-10 day service SLA (currently at 16 days), constituting a deficiency in service. Direct legal notice is the optimal route to pressure the manufacturer into a replacement before proceeding to e-Jagriti.",
+      "sla_factor": true,
+      "next_action": "Draft and dispatch a formal legal notice to Nothing India demanding immediate replacement or a full refund, citing Section 2(11) and Section 84 of the Consumer Protection Act, 2019.",
+      "agent": "arbiter_agent"
+    },
+    "filing_info": {
+      "form_type": "legal_notice",
+      "form_status": "ready",
+      "fields": {
+        "state": "Delhi",
+        "company": "Nothing India",
+        "relief_amount": 0.0,
+        "description": "The customer purchased a Nothing Phone 4a Pro on 2026-03-23. Within 48 hours (on 2026-03-25), a severe manufacturing defect appeared in the form of water patches inside the Glyph Matrix display. Despite raising support ticket #1700763 and the company promising a 7-10 days resolution, 16 days have elapsed with no resolution (SLA breached by 6 days). This legal notice demands immediate replacement or full refund under Section 2(11) and Section 84 of the Consumer Protection Act, 2019.",
+        "jurisdiction": "New Delhi, Delhi"
+      },
+      "evidence_checklist": {
+        "receipt": true,
+        "photos": true,
+        "tickets": true,
+        "emails": true
+      },
+      "portal_url": "N/A - Direct Legal Notice Dispatch",
+      "next_step": "Draft and dispatch a formal legal notice to Nothing India (support@nothing.tech) demanding immediate replacement or a full refund, attaching the invoice, defect photos, and communication history.",
+      "agent": "filing_agent",
+      "human_approval_required": true
+    },
+    "monitoring_info": {
+      "status": "escalated",
+      "days_elapsed": 16,
+      "sla_deadline": "2026-04-09",
+      "days_until_deadline": -1,
+      "last_update": "2026-04-10",
+      "auto_escalation_triggered": true,
+      "next_check_date": "2026-04-11",
+      "action_required": "The 15-day National Consumer Helpline (NCH) SLA has been breached with 16 days elapsed. Auto-escalation is triggered. Proceed with immediate dispatch of the formal legal notice to Nothing India and prepare documentation for filing on the e-Jagriti portal.",
+      "agent": "monitoring_agent"
+    }
+  },
+  "form_output": {
+    "status": "form_simulated",
+    "portal": "NCH",
+    "reason": "Computer Use API unavailable - showing form structure",
+    "form_fields": {
+      "state": "Karnataka",
+      "company_name": "Nothing India",
+      "sector": "Consumer Electronics",
+      "nature_of_complaint": "Manufacturing Defect",
+      "relief_amount": 0.0,
+      "description": "Water patches in Glyph Matrix display",
+      "evidence_files": [
+        {
+          "type": "receipt",
+          "filename": "invoice.pdf"
+        },
+        {
+          "type": "photo",
+          "filename": "defect_photo_1.jpg"
+        },
+        {
+          "type": "photo",
+          "filename": "defect_photo_2.jpg"
+        },
+        {
+          "type": "correspondence",
+          "filename": "email_thread.txt"
+        }
+      ]
+    },
+    "submission_url": "https://consumerhelpline.gov.in/file-complaint",
+    "next_step": "HUMAN APPROVAL: Review form and click SUBMIT",
+    "agents_analysis": {
+      "status": "completed",
+      "decision": "ready_to_file",
+      "confidence": 95,
+      "routing_channel": "legal_notice_direct",
+      "case": {
+        "product": {
+          "name": "Nothing Phone 4a Pro",
+          "model": "4a Pro",
+          "serial": "",
+          "price": 0.0,
+          "purchase_date": "2026-03-23"
+        },
+        "defect": {
+          "description": "Water patches in Glyph Matrix display",
+          "date_discovered": "2026-03-25",
+          "severity": "high"
+        },
+        "timeline": [
+          {
+            "date": "2026-03-23",
+            "event": "Product purchased"
+          },
+          {
+            "date": "2026-03-25",
+            "event": "Defect discovered (Water patches in Glyph Matrix display)"
+          }
+        ],
+        "company": {
+          "name": "Nothing India",
+          "contact": "support@nothing.tech",
+          "promises": [
+            "7-10 days resolution"
+          ]
+        },
+        "evidence": [
+          {
+            "type": "receipt",
+            "description": "Invoice (March 23, 2026)"
+          },
+          {
+            "type": "photo",
+            "description": "Defect photos (2)"
+          },
+          {
+            "type": "email",
+            "description": "Email thread with support"
+          },
+          {
+            "type": "ticket",
+            "description": "Support ticket screenshots (Ticket #1700763)"
+          }
+        ],
+        "current_status": "Unresolved, SLA breached",
+        "days_elapsed": 16,
+        "sla_breaches": [
+          {
+            "promised": "7-10 days",
+            "actual": "16 days",
+            "days_overdue": 6
+          }
+        ],
+        "extraction_model": "gemini-3.5-flash",
+        "agent": "extraction_agent"
+      },
+      "advocate_view": {
+        "legal_claims": [
+          {
+            "section": "Section 2(10) of the Consumer Protection Act, 2019",
+            "claim": "Manufacturing Defect in Mobile Device",
+            "evidence": "Water patches appeared in the sealed Glyph Matrix display within 48 hours of purchase (discovered on 2026-03-25 after purchase on 2026-03-23), indicating a fundamental sealing/ingress protection failure during manufacturing."
+          },
+          {
+            "section": "Section 2(11) of the Consumer Protection Act, 2019",
+            "claim": "Deficiency in Service due to SLA Breach",
+            "evidence": "Support ticket #1700763 remains unresolved after 16 days, violating Nothing India's contractually promised resolution SLA of 7-10 days by an overdue margin of 6 days."
+          },
+          {
+            "section": "Section 2(47) of the Consumer Protection Act, 2019",
+            "claim": "Unfair Trade Practice",
+            "evidence": "Selling a product with a defective ingress protection barrier that fails immediately under normal usage, combined with misleading service delivery timelines (SLA breach)."
+          },
+          {
+            "section": "Section 84 of the Consumer Protection Act, 2019",
+            "claim": "Product Liability Action against Product Manufacturer",
+            "evidence": "The product contains a design and manufacturing defect (Glyph Matrix moisture accumulation) that deviates from standard specifications of usage, rendering the device unfit for purpose."
+          }
+        ],
+        "strength_score": 9.2,
+        "estimated_compensation": 65000.0,
+        "deficiency_type": "manufacturing",
+        "supporting_arguments": [
+          "The defect manifested within 48 hours of purchase, establishing a strong legal presumption that the latent defect existed at the time of sale.",
+          "A sealed Glyph Matrix displaying water patches without any external physical damage or immersion proof indicates a gross defect in the manufacturing assembly's quality control.",
+          "The manufacturer's failure to resolve the issue within their committed 7-10 days SLA constitutes a clear deficiency in service, causing mental harassment and loss of utility to the consumer.",
+          "The consumer possesses comprehensive evidence including the purchase invoice, photographic proof of the defect, and documented communication logs showcasing the SLA breach."
+        ],
+        "weaknesses": [
+          "The manufacturer might raise a counter-defense alleging user-induced water damage/misuse, which must be proactively refuted by pointing out the immediate 2-day timeline and the absence of any external physical impact on the device chassis."
+        ],
+        "recommendation": "strong_case",
+        "agent": "advocate_agent"
+      },
+      "defense_view": {
+        "company_position": "The warranty claim is ineligible for free replacement or repair because the reported defect involves liquid ingress ('water patches'), which is explicitly excluded from standard warranty coverage under Nothing's Limited Warranty Policy. Standard IP (Ingress Protection) ratings are tested under controlled laboratory conditions and do not constitute an absolute guarantee against liquid damage, nor does the warranty cover liquid exposure resulting from accidental drops, environmental pressure, or exposure to liquids beyond rating limits. Furthermore, a 16-day turnaround time during active technical investigation does not constitute a 'deficiency of service' under Indian Consumer Law.",
+        "counter_claims": [
+          {
+            "claim": "Liquid damage is a standard industry exclusion and voids the limited warranty, shifting the burden of repair costs to the consumer as Customer-Induced Damage (CID).",
+            "legal_basis": "Nothing Limited Warranty Policy (Exclusions Section); Section 19 of the Indian Sale of Goods Act, 1930 (risk passes to the buyer upon delivery)."
+          },
+          {
+            "claim": "A 16-day resolution window during an ongoing technical verification and diagnostic process for liquid ingress does not amount to 'Deficiency in Service' under the Consumer Protection Act.",
+            "legal_basis": "Section 2(11) of the Consumer Protection Act, 2019 (requiring proof of negligence or willful default, rather than standard operational diagnostic delays)."
+          }
+        ],
+        "strength_score": 7,
+        "warranty_limitations": [
+          "Warranty strictly excludes damage caused by liquid, moisture, dampness, or spillages of food or liquid.",
+          "IP rating protection is not permanent and can degrade over time or be compromised by minor physical shocks not visible externally.",
+          "Warranty does not cover cosmetic or internal damage caused by accidental exposure to steam, high humidity, or pressurized water."
+        ],
+        "evidence_gaps": [
+          "No authorized service center diagnostic report proving that the internal Liquid Contact Indicators (LCIs) are untripped.",
+          "No expert opinion or technical teardown analysis confirming that the seal failed due to a manufacturing defect rather than user-induced exposure to liquid exceeding the device's IP rating limits.",
+          "Lack of proof that the device did not suffer a minor drop or pressure strain between March 23 and March 25 that compromised the waterproof adhesive seals."
+        ],
+        "likely_defense": "The company will demand the physical submission of the device to an authorized service center for a technical teardown. If the internal Liquid Contact Indicators (LCIs) are found to be pink/red (tripped), the company will formally deny the warranty claim, cite the 'Liquid Ingress' exclusion clause, and issue an estimate for paid out-of-warranty repairs. The company will argue that the 16-day delay was necessary to conduct a thorough technical analysis and verify the root cause of the seal breach.",
+        "company_advantage": "Industry-standard warranty terms and conditions universally exclude liquid damage, and Indian Consumer Fora routinely uphold these exclusions when internal Liquid Contact Indicators (LCIs) are tripped, as it serves as physical, objective evidence of liquid exposure post-purchase.",
+        "agent": "defense_agent"
+      },
+      "arbiter_view": {
+        "advocate_score": 8.5,
+        "defense_score": 4.5,
+        "net_confidence": 95,
+        "routing_decision": "ready_to_file",
+        "channel": "legal_notice_direct",
+        "reasoning": "The advocate holds a highly compelling case because the defect manifested within 48 hours of purchase, which strongly indicates a pre-existing manufacturing defect in the ingress protection/sealing of the Glyph Matrix. While the defense argues standard liquid exclusions, a device failing within 2 days of normal use cannot be dismissed as user negligence without immediate diagnostic proof, which the company has failed to provide. Furthermore, the company has breached its own 7-10 day service SLA (currently at 16 days), constituting a deficiency in service. Direct legal notice is the optimal route to pressure the manufacturer into a replacement before proceeding to e-Jagriti.",
+        "sla_factor": true,
+        "next_action": "Draft and dispatch a formal legal notice to Nothing India demanding immediate replacement or a full refund, citing Section 2(11) and Section 84 of the Consumer Protection Act, 2019.",
+        "agent": "arbiter_agent"
+      },
+      "filing_info": {
+        "form_type": "legal_notice",
+        "form_status": "ready",
+        "fields": {
+          "state": "Delhi",
+          "company": "Nothing India",
+          "relief_amount": 0.0,
+          "description": "The customer purchased a Nothing Phone 4a Pro on 2026-03-23. Within 48 hours (on 2026-03-25), a severe manufacturing defect appeared in the form of water patches inside the Glyph Matrix display. Despite raising support ticket #1700763 and the company promising a 7-10 days resolution, 16 days have elapsed with no resolution (SLA breached by 6 days). This legal notice demands immediate replacement or full refund under Section 2(11) and Section 84 of the Consumer Protection Act, 2019.",
+          "jurisdiction": "New Delhi, Delhi"
+        },
+        "evidence_checklist": {
+          "receipt": true,
+          "photos": true,
+          "tickets": true,
+          "emails": true
+        },
+        "portal_url": "N/A - Direct Legal Notice Dispatch",
+        "next_step": "Draft and dispatch a formal legal notice to Nothing India (support@nothing.tech) demanding immediate replacement or a full refund, attaching the invoice, defect photos, and communication history.",
+        "agent": "filing_agent",
+        "human_approval_required": true
+      },
+      "monitoring_info": {
+        "status": "escalated",
+        "days_elapsed": 16,
+        "sla_deadline": "2026-04-09",
+        "days_until_deadline": -1,
+        "last_update": "2026-04-10",
+        "auto_escalation_triggered": true,
+        "next_check_date": "2026-04-11",
+        "action_required": "The 15-day National Consumer Helpline (NCH) SLA has been breached with 16 days elapsed. Auto-escalation is triggered. Proceed with immediate dispatch of the formal legal notice to Nothing India and prepare documentation for filing on the e-Jagriti portal.",
+        "agent": "monitoring_agent"
+      }
+    }
+  },
+  "timestamp": "2026-04-08T14:30:00Z"
+}
